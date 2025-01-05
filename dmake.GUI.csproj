@@ -77,6 +77,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Frm_InitProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_InitProject.Designer.cs">
+      <DependentUpon>Frm_InitProject.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +92,9 @@
     <Compile Include="LoggerFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Frm_InitProject.resx">
+      <DependentUpon>Frm_InitProject.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_Main.resx">
       <DependentUpon>frm_Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,6 +128,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
+    <None Include="PartialTemplate\Standalone\信息安全告知书\makefile-part.yml" />
+    <None Include="PartialTemplate\Standalone\信息安全告知书\template\信息网络安全保密承诺书模板.docx" />
+    <None Include="PartialTemplate\Standalone\电力监控票\doc-part\远动装置修改转发表.docx" />
+    <None Include="PartialTemplate\Standalone\电力监控票\makefile-part.yml" />
+    <None Include="PartialTemplate\Standalone\电力监控票\template\电力监控票模板.docx" />
+    <None Include="PartialTemplate\TypicalWork\远动装置修改转发表\makefile-part.yml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -139,6 +154,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="PartialTemplate\Standalone\电力监控票\md\monitoring.md" />
+    <Content Include="PartialTemplate\TypicalWork\远动装置修改转发表\md\plan.md" />
+    <Content Include="PartialTemplate\TypicalWork\远动装置修改转发表\md\survey.md" />
     <Content Include="Properties\icon-gui.ico" />
     <Content Include="NewProjectTemplate\第二种工作票\md\plan.md">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -147,7 +165,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="PartialTemplate\Standalone\二级动火作业票\" />
+    <Folder Include="PartialTemplate\Standalone\斗臂车作业方案\" />
+    <Folder Include="PartialTemplate\Standalone\有限空间作业方案\" />
+    <Folder Include="PartialTemplate\Standalone\起重、吊车作业方案\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
