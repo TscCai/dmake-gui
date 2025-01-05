@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Main));
-            this.cb_Template = new Sunny.UI.UIComboBox();
-            this.lbl_InstalledTemp = new Sunny.UI.UILabel();
             this.btn_Init = new Sunny.UI.UIButton();
             this.StyleManager = new Sunny.UI.UIStyleManager(this.components);
             this.btn_Build = new Sunny.UI.UISymbolButton();
@@ -43,46 +41,18 @@
             this.btn_OpenAppData = new Sunny.UI.UISymbolButton();
             this.ctxMenu = new Sunny.UI.UIContextMenuStrip();
             this.menuItem_About = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_ImportImage = new Sunny.UI.UISymbolButton();
             this.ctxMenu.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // cb_Template
-            // 
-            this.cb_Template.DataSource = null;
-            this.cb_Template.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
-            this.cb_Template.FillColor = System.Drawing.Color.White;
-            this.cb_Template.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.cb_Template.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
-            this.cb_Template.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.cb_Template.Location = new System.Drawing.Point(160, 53);
-            this.cb_Template.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cb_Template.MinimumSize = new System.Drawing.Size(63, 0);
-            this.cb_Template.Name = "cb_Template";
-            this.cb_Template.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
-            this.cb_Template.Size = new System.Drawing.Size(385, 35);
-            this.cb_Template.TabIndex = 1;
-            this.cb_Template.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cb_Template.Watermark = "---选择一个模板---";
-            // 
-            // lbl_InstalledTemp
-            // 
-            this.lbl_InstalledTemp.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_InstalledTemp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.lbl_InstalledTemp.Location = new System.Drawing.Point(13, 53);
-            this.lbl_InstalledTemp.Name = "lbl_InstalledTemp";
-            this.lbl_InstalledTemp.Size = new System.Drawing.Size(140, 35);
-            this.lbl_InstalledTemp.TabIndex = 0;
-            this.lbl_InstalledTemp.Text = "当前已安装的模板";
-            this.lbl_InstalledTemp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btn_Init
             // 
             this.btn_Init.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Init.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_Init.Location = new System.Drawing.Point(580, 53);
+            this.btn_Init.Location = new System.Drawing.Point(258, 50);
             this.btn_Init.MinimumSize = new System.Drawing.Size(1, 1);
             this.btn_Init.Name = "btn_Init";
-            this.btn_Init.Size = new System.Drawing.Size(126, 35);
+            this.btn_Init.Size = new System.Drawing.Size(212, 42);
             this.btn_Init.TabIndex = 2;
             this.btn_Init.Text = "初始化工程";
             this.btn_Init.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -112,10 +82,10 @@
             this.lbl_Status.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lbl_Status.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lbl_Status.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.lbl_Status.Location = new System.Drawing.Point(0, 672);
+            this.lbl_Status.Location = new System.Drawing.Point(0, 673);
             this.lbl_Status.Name = "lbl_Status";
             this.lbl_Status.Padding = new System.Windows.Forms.Padding(10, 0, 0, 5);
-            this.lbl_Status.Size = new System.Drawing.Size(1024, 28);
+            this.lbl_Status.Size = new System.Drawing.Size(1024, 27);
             this.lbl_Status.TabIndex = 5;
             this.lbl_Status.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -138,10 +108,10 @@
             // 
             this.btn_OpenExistProj.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_OpenExistProj.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_OpenExistProj.Location = new System.Drawing.Point(729, 53);
+            this.btn_OpenExistProj.Location = new System.Drawing.Point(563, 50);
             this.btn_OpenExistProj.MinimumSize = new System.Drawing.Size(1, 1);
             this.btn_OpenExistProj.Name = "btn_OpenExistProj";
-            this.btn_OpenExistProj.Size = new System.Drawing.Size(140, 35);
+            this.btn_OpenExistProj.Size = new System.Drawing.Size(212, 42);
             this.btn_OpenExistProj.TabIndex = 2;
             this.btn_OpenExistProj.Text = "打开已有工程";
             this.btn_OpenExistProj.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -172,11 +142,12 @@
             // 
             this.btn_OpenAppData.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_OpenAppData.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_OpenAppData.Location = new System.Drawing.Point(936, 53);
+            this.btn_OpenAppData.Location = new System.Drawing.Point(946, 57);
             this.btn_OpenAppData.MinimumSize = new System.Drawing.Size(1, 1);
             this.btn_OpenAppData.Name = "btn_OpenAppData";
             this.btn_OpenAppData.Size = new System.Drawing.Size(55, 35);
             this.btn_OpenAppData.Symbol = 61564;
+            this.btn_OpenAppData.SymbolSize = 32;
             this.btn_OpenAppData.TabIndex = 7;
             this.btn_OpenAppData.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btn_OpenAppData.TipsText = "打开程序数据目录";
@@ -200,10 +171,26 @@
             this.menuItem_About.Text = "关于";
             this.menuItem_About.Click += new System.EventHandler(this.menuItem_About_Click);
             // 
+            // btn_ImportImage
+            // 
+            this.btn_ImportImage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_ImportImage.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_ImportImage.Location = new System.Drawing.Point(866, 57);
+            this.btn_ImportImage.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btn_ImportImage.Name = "btn_ImportImage";
+            this.btn_ImportImage.Size = new System.Drawing.Size(55, 35);
+            this.btn_ImportImage.Symbol = 262210;
+            this.btn_ImportImage.SymbolSize = 32;
+            this.btn_ImportImage.TabIndex = 7;
+            this.btn_ImportImage.TipsFont = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_ImportImage.TipsText = "导入定置图";
+            this.btn_ImportImage.Click += new System.EventHandler(this.btn_OpenAppData_Click);
+            // 
             // frm_Main
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1024, 700);
+            this.Controls.Add(this.btn_ImportImage);
             this.Controls.Add(this.btn_OpenAppData);
             this.Controls.Add(this.tab_Control);
             this.Controls.Add(this.lbl_Status);
@@ -211,8 +198,6 @@
             this.Controls.Add(this.btn_Build);
             this.Controls.Add(this.btn_OpenExistProj);
             this.Controls.Add(this.btn_Init);
-            this.Controls.Add(this.cb_Template);
-            this.Controls.Add(this.lbl_InstalledTemp);
             this.ExtendBox = true;
             this.ExtendMenu = this.ctxMenu;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -229,9 +214,6 @@
         }
 
         #endregion
-
-        private Sunny.UI.UIComboBox cb_Template;
-        private Sunny.UI.UILabel lbl_InstalledTemp;
         private Sunny.UI.UIButton btn_Init;
         private Sunny.UI.UIStyleManager StyleManager;
         private Sunny.UI.UISymbolButton btn_Build;
@@ -243,6 +225,7 @@
         private Sunny.UI.UISymbolButton btn_OpenAppData;
         private Sunny.UI.UIContextMenuStrip ctxMenu;
         private System.Windows.Forms.ToolStripMenuItem menuItem_About;
+        private Sunny.UI.UISymbolButton btn_ImportImage;
     }
 }
 
